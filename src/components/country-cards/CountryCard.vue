@@ -13,7 +13,7 @@
         <h3>{{ name }}</h3>
         <ul>
           <li v-if="pop"><span>Population: </span>{{ pop }}</li>
-          <li v-if="pop"><span>Region: </span>{{ pop }}</li>
+          <li v-if="region"><span>Region: </span>{{ region }}</li>
           <li v-if="capital"><span>Capital: </span>{{ capital }}</li>
         </ul>
       </div>
