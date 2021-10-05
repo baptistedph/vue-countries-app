@@ -3,7 +3,7 @@
     <CountryCard
       v-for="country in filteredCountries"
       :key="country.name"
-      :flag="country.flag"
+      :flag="country.flags.svg"
       :name="country.name"
       :pop="country.population"
       :region="country.region"
@@ -56,7 +56,7 @@ export default {
     }, props.options)
 
     const getCountries = async () => {
-      const res = await fetch('https://restcountries.eu/rest/v2/all')
+      const res = await fetch('https://restcountries.com/v3.1/all')
       countries.value = await res.json()
     }
 

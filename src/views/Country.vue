@@ -34,7 +34,7 @@ export default {
 
     const getCountry = async () => {
       const res = await fetch(
-        'https://restcountries.eu/rest/v2/name/' + props.countryName,
+        'https://restcountries.com/v3.1/name/' + props.countryName,
       )
       country.value = await res.json()
     }
