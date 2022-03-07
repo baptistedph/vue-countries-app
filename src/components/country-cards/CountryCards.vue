@@ -32,7 +32,7 @@ export default {
         if (props.options.region && props.options.region !== 'all') {
           filteredCountries.value = countries.value.filter(
             country =>
-              country.name
+              country.name.common
                 .toLowerCase()
                 .includes(props.options.name.toLowerCase()) &&
               country.region.toLowerCase() ===
@@ -40,7 +40,7 @@ export default {
           )
         } else {
           filteredCountries.value = countries.value.filter(country =>
-            country.name
+            country.name.common
               .toLowerCase()
               .includes(props.options.name.toLowerCase()),
           )
@@ -58,6 +58,7 @@ export default {
     const getCountries = async () => {
       const res = await fetch('https://restcountries.com/v3.1/all')
       countries.value = await res.json()
+      console.log(countries.value[0].name)
     }
 
     getCountries()
